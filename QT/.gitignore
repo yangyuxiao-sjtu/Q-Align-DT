@@ -1,0 +1,27 @@
+# 忽略所有以 save 开头的文件夹（例如 save, save1, save_models 等）
+save*/
+
+# 忽略 wandb 目录
+wandb/
+
+# Pretrained critics / checkpoints / training artifacts
+saved_q_*/
+our_result/
+ablation/
+debug/
+Final_results/
+critic_rtg_eval*/
+policy_rollout_eval*/
+data/
+external/
+process_data/data/
+*.pt
+*.pth
+*.ckpt
+events.out.tfevents*
+
+# 忽略所有以 .out 结尾的文件
+*.out
+
+__pycache__/
+*.pyc
