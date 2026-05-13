@@ -1,10 +1,12 @@
 # Return-to-Go Is More Than a Number: Q-Guided Alignment for Return-Conditioned Supervised Learning
 
-This repository contains the implementation for **Q-Guided Alignment for Return-Conditioned Supervised Learning**. The code builds on return-conditioned supervised learning and adds Q-guided alignment losses for training decision-transformer-style policies.
+This repository contains the official implementation for our ICML 2026 paper, **Return-to-Go Is More Than a Number: Q-Guided Alignment for Return-Conditioned Supervised Learning**.
+
+This codebase is built upon the official implementation of [QT](https://github.com/charleshsc/QT). We thank the authors for releasing their code. Please follow the original QT repository to set up the base environment, and then prepare the additional data and critic checkpoints described below.
 
 ## Setup
 
-Install the Python dependencies used by Decision Transformer / D4RL experiments, including:
+After setting up the QT environment, make sure the Python dependencies used by Decision Transformer / D4RL experiments are available, including:
 
 - PyTorch
 - Gym
