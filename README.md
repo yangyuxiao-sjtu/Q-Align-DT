@@ -21,7 +21,7 @@ University of North Carolina at Chapel Hill · **ICML 2026**
   <img src="assets/readme/rtg-alignment.png" alt="Target RTG versus achieved score on Hopper-medium, HalfCheetah-medium, and Walker2d-medium, comparing Q-Align DT with DC, RADT, QT, and DT." width="100%">
 </p>
 
-**Does changing the target return actually change the policy?** Q-Align DT follows the requested return more closely across these D4RL tasks. The blue curve is our method; the dashed line marks ideal RTG alignment. Each point averages 30 rollouts. Adapted from Figure 1 of the [paper](https://arxiv.org/html/2605.29028v1#S1.F1).
+**Does changing the target return actually change the policy?** Q-Align DT follows the requested return more closely across these D4RL tasks. The blue curve is our method; the dashed line marks ideal RTG alignment. Each point averages 30 rollouts.
 
 ## Overview
 
@@ -39,7 +39,7 @@ This repository contains the official implementation of **Q-Align DT**. Return-t
   <img src="assets/readme/velocity-control.png" alt="Mean HalfCheetah forward velocity increases with target RTG on medium-replay, medium, and medium-expert datasets." width="100%">
 </p>
 
-**RTG controls more than a score.** Higher target returns induce faster locomotion across three HalfCheetah datasets, revealing a connection between the scalar conditioning signal and the agent's behavior (paper, Figure 3).
+**RTG controls more than a score.** Higher target returns induce faster locomotion across three HalfCheetah datasets, revealing a connection between the scalar conditioning signal and the agent's behavior.
 
 <details>
 <summary><b>See velocity throughout individual rollouts</b></summary>
@@ -48,13 +48,13 @@ This repository contains the official implementation of **Q-Align DT**. Return-t
   <img src="assets/readme/velocity-trajectories.png" alt="HalfCheetah-medium-expert velocity over 1,000 timesteps for different target RTGs, averaged over 30 runs." width="760">
 </p>
 
-Different target RTGs produce distinct velocity profiles on HalfCheetah-medium-expert. Curves average 30 runs (paper, Figure 4).
+Different target RTGs produce distinct velocity profiles on HalfCheetah-medium-expert. Curves average 30 runs.
 
 </details>
 
 ### Zero-shot velocity tracking
 
-A model trained on **HalfCheetah-medium-expert** transfers to **HalfCheetah-vel**, with target RTGs selected by linear interpolation under the paper's shared adjustment protocol. Selected cross-domain results from Table 5 are shown below; all methods in this table use the same source dataset.
+A model trained on **HalfCheetah-medium-expert** transfers to **HalfCheetah-vel**, with target RTGs selected by linear interpolation under a shared adjustment protocol. All methods below use the same source dataset.
 
 | Method | Average episode return ↑ |
 | :--- | ---: |
@@ -63,8 +63,6 @@ A model trained on **HalfCheetah-medium-expert** transfers to **HalfCheetah-vel*
 | QT | -824.6 |
 | QCS | -1298.7 |
 | **Q-Align DT** | **-142.3** |
-
-See the [paper](https://arxiv.org/abs/2605.29028) for the full D4RL comparisons, alignment metrics, transfer protocol, and ablations.
 
 ## Getting Started
 
@@ -136,5 +134,3 @@ If you find this work useful, please cite our paper:
 ## Acknowledgements
 
 This codebase is built upon the official implementation of [QT](https://github.com/charleshsc/QT). We thank the authors for releasing their code. Please follow the original QT repository to set up the base environment, then prepare the additional data and critic checkpoints described above.
-
-The figures shown here are taken from our [paper](https://arxiv.org/abs/2605.29028); the first combines its three Figure 1 panels for display.
